@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-image: url('https://t4.ftcdn.net/jpg/04/60/71/01/360_F_460710131_YkD6NsivdyYsHupNvO3Y8MPEwxTAhORh.jpg');
+    background-size: cover; /* Ensure the background image covers the entire screen */
+    background-position: center; /* Center the background image */
+}
+.outer {
+    margin:auto;
+    height:400px;
+    width:500px;
+    border:2px black;
+    position:relative;
+    background-image: url('https://t4.ftcdn.net/jpg/04/60/71/01/360_F_460710131_YkD6NsivdyYsHupNvO3Y8MPEwxTAhORh.jpg');
+    background-size: cover; /* Ensure the background image covers the container */
+    background-position: center; /* Center the background image */
+    /* Increase transparency */
+    background-color: rgba(255, 255, 255, 0.4); /* 0.8 is the alpha value (opacity) */
+}
+
+p {
+    margin-left:80px;
+}
+
+.in {
+    margin-left:80px;
+    padding:10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity of the input fields */
+    border: none; /* Remove border */
+}
+
+/* Increase transparency of placeholder */
+.in::placeholder {
+    opacity: 0.4; /* Adjust the opacity as needed */
+}
+
+
+#bt {
+    margin-top:20px;
+    position:absolute;
+    left:150px;
+}
+
+#bt:hover {
+    background:green;
+    font-size:13px;
+    cursor:pointer;
+    color:white;
+}
+</style>
+<script>
+function fa() {
+    if(a.value=="" || b.value=="") {
+        f();
+        document.getElementById("a").style.border="3px solid red";
+        document.getElementById("b").style.border="3px solid red";
+        bt.value="password 1st!";
+    } else {
+        document.getElementById("a").style.border="3px solid green";
+        document.getElementById("b").style.border="3px solid green";
+        bt.value="now OK!!";
+        bt.style.left="120px";
+    }
+}
+
+flag=1;
+
+function f() {
+    if(flag==1) {
+        bt.style.left="210px";
+        flag=2;
+    } else if(flag==2) {
+        bt.style.left="80px";
+        flag=1;
+    }
+}
+</script>
+</head>
+<body>
+
+<div class="outer">
+    <h1 style="text-align:center;color:white">legend form</h1>
+    <p style="color:white"><b>Enter Id:</b></p>
+    <input class="in" type="text" placeholder="Enter id" id="a"/>
+    <p style="color:white"><b>Enter Confirm Pass:</b></p>
+    <input class="in" type="password" placeholder="Enter password" id="b"/>
+    <br>
+    <input type="submit" onmouseenter="fa()" onclick="alert('good...!')" id="bt" />
+</div>
+
+</body>
+</html>
+
